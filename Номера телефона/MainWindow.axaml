@@ -1,0 +1,133 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Номера_телефона.MainWindow"
+        Title="Номера_телефона">
+
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock
+			Text="Ввод номера телефона"
+			Grid.ColumnSpan="2"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Top"
+			FontSize="20"/>
+
+		<Panel
+		Grid.Row="1"
+		Grid.Column="">
+			<TextBlock
+				Name="rndYourNumber"
+				Text="Ваш номер телефона:"
+				VerticalAlignment="Bottom"
+				HorizontalAlignment="Center"
+				Margin="150"/>
+			<StackPanel
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Orientation="Vertical">
+				<TextBlock
+					Text="Это ваш номер телефона?"
+					HorizontalAlignment="Center"
+					FontSize="15"/>
+				<TextBlock
+					Name="randomText"
+					HorizontalAlignment="Center"
+					Text="0000000000"
+					FontSize="16" FontWeight="Heavy"/>
+				<Border
+					HorizontalAlignment="Center">
+					<StackPanel
+						Orientation="Horizontal">
+						<Button
+							
+							Click="rndNumberSet"
+							Content="Да"/>
+						<Button
+							Click="rndNumberGet"
+							Content="Нет"/>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</Panel>
+		
+		<Panel
+			Grid.Column="1"
+			Grid.Row="2">
+			<TextBlock
+				Text="Ввод через слайдер"
+				HorizontalAlignment="Center"
+				FontSize="20"
+				Margin="1"/>
+			<StackPanel
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Orientation="Vertical">
+				<TextBlock
+					HorizontalAlignment="Center"
+					Text="{ Binding #sliderPhone.Value }"/>
+				<Slider
+					Name="sliderPhone"
+					Width="200"
+					Minimum="10000000000" Maximum="99999999999"
+					IsSnapToTickEnabled="True"
+					TickFrequency="2"/>
+				
+			</StackPanel>
+		</Panel>
+
+          <StackPanel Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+			<TextBlock FontSize="15" Width="300" x:Name="nomers"  >
+				Введите ваш номер телефона:
+			</TextBlock>
+
+		</StackPanel>
+
+		<StackPanel  Grid.Column="4" Grid.Row="4" Margin="0,26,00,0" >
+			<TextBlock FontSize="25" Width="232"  HorizontalAlignment="Right" >
+				<MaskedTextBox x:Name="nomertel" Mask="+0(000)000-00-00" />
+			</TextBlock>
+		</StackPanel>
+		
+		<StackPanel  Grid.Column="4" Grid.Row="4" Width="64">
+			<Button  FontSize="15"  HorizontalAlignment="Right"  Click="Button_Click_1">
+				+
+			</Button>
+			<TextBlock Text="0" Name="КликМобТел"/>
+		</StackPanel>
+
+		
+
+		
+	</Grid>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</Window>
